@@ -7,10 +7,11 @@ public class IntegerArray {
 	private int length;
 	private int[] arrayInt = new int[length];
 	private int counter = 0;
+	private int counter2 = 0;
 	
-//	public IntegerArray() {
-//		
-//	}
+	public IntegerArray() {
+		
+	}
 	
 	public IntegerArray(int[] array) {
 		setLength(array);
@@ -61,6 +62,32 @@ public class IntegerArray {
 			return true;
 		}
 		else return false;
+	}
+	
+	
+	public void addElement(int x) {
+//		System.out.println("origina"+length);
+		if(length == 0) {
+			int[] newArr = {x};
+		setLength(newArr);
+		setArrayInt(newArr);
+		}
+		else {
+			length++;
+			int[] newArr = new int[length];
+//			System.out.println("length"+length);
+			newArr[0]= arrayInt[0];
+			for(int j=0; j<length-1;j++) {
+				newArr[j]=arrayInt[j];
+			}
+			newArr[length-1]=x;
+//			setLength(newArr);
+			setArrayInt(newArr);
+//			System.out.println(Arrays.toString(newArr));
+//			System.out.println("second"+length);
+		}
+		
+		
 	}
 	
 	@Override
